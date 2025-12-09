@@ -5,14 +5,31 @@
   <title>Rudhran B | ML & SDE Portfolio</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- Keywords for AI/ATS style filters -->
+  <!-- SEO / ATS -->
   <meta name="description" content="Rudhran B - 3rd year B.Tech CSE (AI & ML) student seeking ML Developer / SDE internship. Skills in Python, Java, C++, Machine Learning, Data Structures and Algorithms, Node.js, MySQL, HTML, CSS.">
-  <meta name="keywords" content="Machine Learning, ML Developer, Software Development Engineer, SDE, Python, Java, C, C++, TensorFlow, PyTorch, scikit-learn, Pandas, NumPy, Node.js, MySQL, Git, GitHub, Data Structures and Algorithms, Internship">
+  <meta name="keywords" content="Machine Learning, ML Developer, Software Development Engineer, SDE, Python, Java, C, C++, scikit-learn, Pandas, NumPy, Node.js, MySQL, Git, GitHub, Data Structures and Algorithms, Internship">
 
   <!-- Google Font -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
   <style>
+    :root {
+      --bg: #020617;
+      --bg-elevated: #020617;
+      --card: #0b1220;
+      --border-soft: rgba(148, 163, 184, 0.35);
+      --border-strong: rgba(148, 163, 184, 0.5);
+      --accent: #38bdf8;
+      --accent-soft: rgba(56, 189, 248, 0.12);
+      --text-main: #e5e7eb;
+      --text-subtle: #9ca3af;
+      --text-soft: #cbd5f5;
+      --shadow-soft: 0 18px 45px rgba(15, 23, 42, 0.9);
+      --radius-lg: 1.25rem;
+      --radius-md: 0.9rem;
+      --radius-pill: 999px;
+    }
+
     * {
       margin: 0;
       padding: 0;
@@ -22,9 +39,12 @@
 
     body {
       font-family: "Poppins", sans-serif;
-      background: #020617; /* darker */
-      color: #e5e7eb;
+      background: radial-gradient(circle at top, rgba(56, 189, 248, 0.12), transparent 60%),
+                  radial-gradient(circle at bottom, rgba(129, 140, 248, 0.14), transparent 55%),
+                  var(--bg);
+      color: var(--text-main);
       line-height: 1.6;
+      min-height: 100vh;
     }
 
     a {
@@ -36,10 +56,10 @@
     header {
       position: sticky;
       top: 0;
-      z-index: 10;
-      background: rgba(15, 23, 42, 0.98);
-      backdrop-filter: blur(8px);
-      border-bottom: 1px solid rgba(148, 163, 184, 0.2);
+      z-index: 20;
+      background: rgba(2, 6, 23, 0.95);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid rgba(15, 23, 42, 0.9);
     }
 
     .nav-container {
@@ -53,47 +73,65 @@
 
     .logo {
       font-weight: 700;
-      font-size: 1.15rem;
-      letter-spacing: 0.08em;
+      font-size: 1.1rem;
+      letter-spacing: 0.09em;
       text-transform: uppercase;
-      color: #38bdf8;
+      color: var(--accent);
     }
 
     nav ul {
       list-style: none;
       display: flex;
-      gap: 1.5rem;
-      font-size: 0.9rem;
+      gap: 1.25rem;
+      font-size: 0.88rem;
     }
 
     nav a {
-      color: #e5e7eb;
-      opacity: 0.8;
-      transition: opacity 0.2s, color 0.2s;
+      position: relative;
+      color: var(--text-main);
+      opacity: 0.85;
+      padding-bottom: 0.15rem;
+      transition: opacity 0.18s ease, color 0.18s ease;
+    }
+
+    nav a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -0.2rem;
+      width: 0;
+      height: 2px;
+      background: linear-gradient(90deg, var(--accent), transparent);
+      transition: width 0.22s ease;
     }
 
     nav a:hover {
       opacity: 1;
-      color: #38bdf8;
+      color: var(--accent);
     }
 
-    /* Layout helpers */
+    nav a:hover::after {
+      width: 100%;
+    }
+
     .container {
       max-width: 1100px;
       margin: 0 auto;
-      padding: 2.5rem 1.5rem;
+      padding: 2.5rem 1.5rem 3rem;
     }
 
     section {
-      padding: 2rem 0;
-      border-bottom: 1px solid rgba(148, 163, 184, 0.18);
+      padding: 2.3rem 0;
+      border-bottom: 1px solid rgba(15, 23, 42, 0.9);
     }
 
     .section-title {
-      font-size: 1.4rem;
-      margin-bottom: 1rem;
-      color: #e5e7eb;
-      display: inline-block;
+      font-size: 1.35rem;
+      margin-bottom: 1.1rem;
+      color: var(--text-main);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
       position: relative;
     }
 
@@ -101,144 +139,240 @@
       content: "";
       position: absolute;
       left: 0;
-      bottom: -0.35rem;
-      width: 40%;
+      bottom: -0.4rem;
+      width: 46%;
       height: 2px;
-      background: linear-gradient(90deg, #38bdf8, transparent);
+      background: linear-gradient(90deg, var(--accent), transparent);
+      opacity: 0.9;
+    }
+
+    .section-badge {
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      padding: 0.15rem 0.55rem;
+      border-radius: var(--radius-pill);
+      border: 1px solid rgba(148, 163, 184, 0.42);
+      color: var(--text-subtle);
     }
 
     /* Hero */
     .hero {
       display: grid;
-      grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
-      gap: 2rem;
+      grid-template-columns: minmax(0, 3fr) minmax(0, 2.4fr);
+      gap: 2.1rem;
       align-items: center;
     }
 
     .hero-left h1 {
-      font-size: 2.4rem;
-      margin-bottom: 0.5rem;
+      font-size: 2.45rem;
+      margin-bottom: 0.6rem;
       font-weight: 700;
     }
 
     .hero-left h2 {
-      font-size: 1.05rem;
+      font-size: 1.01rem;
       font-weight: 500;
-      color: #38bdf8;
-      margin-bottom: 1rem;
+      color: var(--accent);
+      margin-bottom: 1.1rem;
     }
 
     .hero-left p {
-      font-size: 0.95rem;
-      color: #cbd5f5;
-      margin-bottom: 1.2rem;
+      font-size: 0.94rem;
+      color: var(--text-soft);
+      margin-bottom: 1.3rem;
+      max-width: 34rem;
     }
 
     .hero-tags {
       display: flex;
       flex-wrap: wrap;
-      gap: 0.5rem;
-      margin-bottom: 1.3rem;
+      gap: 0.55rem;
+      margin-bottom: 1.35rem;
     }
 
     .tag {
       font-size: 0.75rem;
-      padding: 0.3rem 0.7rem;
-      border-radius: 999px;
-      border: 1px solid rgba(148, 163, 184, 0.5);
-      color: #cbd5f5;
+      padding: 0.33rem 0.85rem;
+      border-radius: var(--radius-pill);
+      border: 1px solid rgba(148, 163, 184, 0.55);
+      color: var(--text-soft);
+      background: radial-gradient(circle at top, rgba(15, 23, 42, 0.85), rgba(15, 23, 42, 0.95));
+      backdrop-filter: blur(4px);
+      transition: border 0.18s ease, transform 0.18s ease, box-shadow 0.18s ease;
+    }
+
+    .tag:hover {
+      border-color: var(--accent);
+      box-shadow: 0 10px 26px rgba(15, 23, 42, 0.95);
+      transform: translateY(-1px);
     }
 
     .hero-buttons {
       display: flex;
       flex-wrap: wrap;
-      gap: 0.75rem;
+      gap: 0.8rem;
     }
 
     .btn {
-      padding: 0.55rem 1.2rem;
-      border-radius: 999px;
+      padding: 0.6rem 1.35rem;
+      border-radius: var(--radius-pill);
       font-size: 0.9rem;
-      border: 1px solid #38bdf8;
+      border: 1px solid var(--accent);
       display: inline-flex;
       align-items: center;
       justify-content: center;
       gap: 0.35rem;
       cursor: pointer;
-      transition: background 0.2s, color 0.2s, transform 0.1s;
+      transition: background 0.18s ease, color 0.18s ease, transform 0.12s ease, box-shadow 0.18s ease;
+      white-space: nowrap;
     }
 
     .btn-primary {
-      background: #38bdf8;
-      color: #0f172a;
+      background: radial-gradient(circle at top left, #4ade80 0, #22d3ee 40%, #0ea5e9 80%);
+      color: #020617;
       font-weight: 500;
+      box-shadow: 0 14px 40px rgba(8, 47, 73, 0.9);
     }
 
     .btn-primary:hover {
-      background: #0ea5e9;
       transform: translateY(-1px);
+      box-shadow: 0 18px 55px rgba(8, 47, 73, 0.95);
     }
 
     .btn-outline {
-      background: transparent;
-      color: #e5e7eb;
+      background: rgba(15, 23, 42, 0.85);
+      color: var(--text-main);
     }
 
     .btn-outline:hover {
-      background: rgba(148, 163, 184, 0.15);
+      background: rgba(15, 23, 42, 1);
       transform: translateY(-1px);
+      box-shadow: 0 14px 36px rgba(15, 23, 42, 0.95);
     }
 
     .hero-right {
-      border-radius: 1.25rem;
-      border: 1px solid rgba(148, 163, 184, 0.4);
-      padding: 1.5rem;
-      background: radial-gradient(circle at top, rgba(56, 189, 248, 0.18), transparent 55%),
-                  rgba(15, 23, 42, 0.95);
+      border-radius: var(--radius-lg);
+      border: 1px solid rgba(148, 163, 184, 0.6);
+      padding: 1.5rem 1.5rem 1.3rem;
+      background:
+        radial-gradient(circle at top, rgba(56, 189, 248, 0.24), transparent 55%),
+        linear-gradient(145deg, rgba(15, 23, 42, 0.96), rgba(15, 23, 42, 0.96));
+      box-shadow: var(--shadow-soft);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-right::before {
+      content: "";
+      position: absolute;
+      inset: -1px;
+      border-radius: inherit;
+      padding: 1px;
+      background: linear-gradient(120deg, rgba(56, 189, 248, 0.8), transparent, rgba(94, 234, 212, 0.7));
+      -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+      -webkit-mask-composite: xor;
+      mask-composite: exclude;
+      opacity: 0.55;
+      pointer-events: none;
     }
 
     .info-row {
-      margin-bottom: 0.75rem;
+      margin-bottom: 0.8rem;
       font-size: 0.9rem;
+      position: relative;
+      z-index: 1;
     }
 
     .info-label {
-      font-size: 0.75rem;
+      font-size: 0.74rem;
       text-transform: uppercase;
-      letter-spacing: 0.12em;
-      color: #9ca3af;
+      letter-spacing: 0.13em;
+      color: var(--text-subtle);
     }
 
     .info-value {
       font-weight: 500;
     }
 
-    /* Role focus cards */
+    /* Generic cards / grid */
+    .flex-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1rem;
+      margin-top: 0.6rem;
+    }
+
+    .card {
+      border-radius: var(--radius-md);
+      border: 1px solid var(--border-soft);
+      padding: 1rem;
+      font-size: 0.9rem;
+      background: radial-gradient(circle at top left, rgba(30, 64, 175, 0.35), transparent 60%),
+                  radial-gradient(circle at bottom right, rgba(8, 47, 73, 0.65), transparent 55%),
+                  var(--card);
+      box-shadow: 0 12px 38px rgba(15, 23, 42, 0.95);
+      transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease, background 0.18s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 22px 60px rgba(15, 23, 42, 0.98);
+      border-color: var(--accent);
+      background:
+        radial-gradient(circle at top left, rgba(56, 189, 248, 0.26), transparent 60%),
+        radial-gradient(circle at bottom right, rgba(59, 130, 246, 0.35), transparent 55%),
+        var(--card);
+    }
+
+    .card h3 {
+      font-size: 0.98rem;
+      margin-bottom: 0.35rem;
+      color: var(--text-main);
+    }
+
+    .card span {
+      font-size: 0.8rem;
+      color: var(--text-subtle);
+    }
+
+    /* Role focus */
     .role-focus-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
       gap: 1rem;
-      margin-top: 0.5rem;
+      margin-top: 0.6rem;
     }
 
     .role-card {
-      border-radius: 0.9rem;
-      border: 1px solid rgba(148, 163, 184, 0.4);
+      border-radius: var(--radius-md);
+      border: 1px solid var(--border-soft);
       padding: 1rem;
-      background: rgba(15, 23, 42, 0.9);
-      font-size: 0.9rem;
+      background: linear-gradient(145deg, #020617, #020617);
+      box-shadow: 0 12px 34px rgba(15, 23, 42, 0.94);
+      transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
+    }
+
+    .role-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 20px 55px rgba(15, 23, 42, 0.98);
+      border-color: rgba(56, 189, 248, 0.75);
     }
 
     .role-card h3 {
       font-size: 1rem;
-      margin-bottom: 0.35rem;
-      color: #e5e7eb;
+      margin-bottom: 0.3rem;
+    }
+
+    .role-card p {
+      font-size: 0.87rem;
+      color: var(--text-soft);
     }
 
     .role-card ul {
       padding-left: 1.1rem;
-      margin-top: 0.35rem;
-      color: #cbd5f5;
+      margin-top: 0.4rem;
+      color: var(--text-soft);
       font-size: 0.86rem;
     }
 
@@ -249,6 +383,10 @@
     /* Education */
     .edu-item {
       margin-bottom: 1rem;
+      padding: 0.75rem 0.9rem;
+      border-radius: 0.9rem;
+      background: rgba(15, 23, 42, 0.85);
+      border: 1px dashed rgba(148, 163, 184, 0.55);
     }
 
     .edu-header {
@@ -256,41 +394,14 @@
       justify-content: space-between;
       flex-wrap: wrap;
       gap: 0.25rem;
-      font-size: 0.95rem;
+      font-size: 0.94rem;
       font-weight: 500;
-      color: #e5e7eb;
     }
 
     .edu-sub {
-      font-size: 0.85rem;
-      color: #9ca3af;
-    }
-
-    /* Grid lists */
-    .flex-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 1rem;
-      margin-top: 0.5rem;
-    }
-
-    .card {
-      border-radius: 0.9rem;
-      border: 1px solid rgba(148, 163, 184, 0.35);
-      padding: 1rem;
-      font-size: 0.9rem;
-      background: rgba(15, 23, 42, 0.9);
-    }
-
-    .card h3 {
-      font-size: 0.95rem;
-      margin-bottom: 0.35rem;
-      color: #e5e7eb;
-    }
-
-    .card span {
-      font-size: 0.8rem;
-      color: #9ca3af;
+      font-size: 0.84rem;
+      color: var(--text-subtle);
+      margin-top: 0.15rem;
     }
 
     /* Skills */
@@ -298,14 +409,14 @@
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
       gap: 1rem;
-      margin-top: 0.75rem;
+      margin-top: 0.8rem;
     }
 
     .skill-title {
-      font-size: 0.85rem;
+      font-size: 0.83rem;
       text-transform: uppercase;
-      letter-spacing: 0.11em;
-      color: #9ca3af;
+      letter-spacing: 0.12em;
+      color: var(--text-subtle);
       margin-bottom: 0.3rem;
     }
 
@@ -316,18 +427,27 @@
     }
 
     .chip {
-      padding: 0.25rem 0.6rem;
-      border-radius: 999px;
-      border: 1px solid rgba(148, 163, 184, 0.4);
+      padding: 0.25rem 0.65rem;
+      border-radius: var(--radius-pill);
+      border: 1px solid var(--border-strong);
       font-size: 0.78rem;
-      color: #d1d5db;
+      color: var(--text-soft);
+      background: rgba(15, 23, 42, 0.95);
+      transition: border-color 0.18s ease, transform 0.18s ease, box-shadow 0.18s ease;
+    }
+
+    .chip:hover {
+      border-color: var(--accent);
+      transform: translateY(-1px);
+      box-shadow: 0 12px 26px rgba(15, 23, 42, 0.96);
     }
 
     /* Projects */
     .project-tagline {
       font-size: 0.9rem;
-      color: #cbd5f5;
+      color: var(--text-soft);
       margin-bottom: 0.6rem;
+      max-width: 40rem;
     }
 
     .project-links {
@@ -336,7 +456,13 @@
     }
 
     .project-links a {
-      color: #38bdf8;
+      color: var(--accent);
+    }
+
+    /* Internship */
+    .internship-meta {
+      font-size: 0.83rem;
+      color: var(--text-subtle);
     }
 
     /* Contact */
@@ -344,7 +470,7 @@
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
       gap: 1rem;
-      margin-top: 0.75rem;
+      margin-top: 0.8rem;
     }
 
     .contact-item {
@@ -352,15 +478,15 @@
     }
 
     .contact-label {
-      font-size: 0.8rem;
+      font-size: 0.78rem;
       letter-spacing: 0.14em;
       text-transform: uppercase;
-      color: #9ca3af;
+      color: var(--text-subtle);
       margin-bottom: 0.25rem;
     }
 
     .contact-value a {
-      color: #38bdf8;
+      color: var(--accent);
       word-break: break-word;
     }
 
@@ -368,7 +494,23 @@
       text-align: center;
       padding: 1.5rem;
       font-size: 0.8rem;
-      color: #9ca3af;
+      color: var(--text-subtle);
+    }
+
+    /* Reveal animations */
+    .reveal {
+      opacity: 0;
+      transform: translateY(22px);
+      transition: opacity 0.55s ease-out, transform 0.55s ease-out;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .reveal-slow {
+      transition-duration: 0.7s;
     }
 
     @media (max-width: 768px) {
@@ -378,11 +520,12 @@
 
       .hero-right {
         order: -1;
+        margin-bottom: 1.3rem;
       }
 
       nav ul {
-        gap: 1rem;
-        font-size: 0.8rem;
+        gap: 0.8rem;
+        font-size: 0.78rem;
       }
     }
   </style>
@@ -407,17 +550,18 @@
     </div>
   </header>
 
-  <!-- Hero -->
   <main class="container">
-    <section class="hero" id="about">
+    <!-- Hero -->
+    <section class="hero reveal reveal-slow" id="about">
       <div class="hero-left">
+        <div class="section-badge">ML &amp; SDE Internship Portfolio</div>
         <h1>Hi, I'm <span style="color:#38bdf8;">Rudhran</span> 👋</h1>
         <h2>3rd Year B.Tech CSE (AI &amp; ML) • ML Developer &amp; SDE Intern Aspirant</h2>
         <p>
-          Motivated engineering student with a strong foundation in programming, algorithms,
+          Engineering student with a growing foundation in programming, algorithms
           and applied AI concepts. I am actively seeking opportunities as an
           <strong>ML Developer Intern</strong> or <strong>Software Development Engineer Intern</strong> to
-          build production-ready solutions, learn from real-world systems, and contribute to impactful projects.
+          work on real-world systems, ship useful features, and keep learning faster.
         </p>
 
         <div class="hero-tags">
@@ -459,42 +603,48 @@
     </section>
 
     <!-- Role Focus -->
-    <section id="role-focus">
-      <h2 class="section-title">Role Focus: ML Developer &amp; SDE Intern</h2>
+    <section id="role-focus" class="reveal">
+      <h2 class="section-title">
+        Role Focus
+        <span class="section-badge">ML Developer · SDE</span>
+      </h2>
 
       <div class="role-focus-grid">
         <div class="role-card">
           <h3>ML Developer Intern</h3>
-          <p style="font-size:0.87rem;">
-            Strong interest in building end-to-end ML solutions: from data preprocessing
-            to model training, evaluation, and deployment.
+          <p>
+            Interested in building end-to-end ML solutions: from data preprocessing
+            to model training, evaluation, and deployment basics.
           </p>
           <ul>
-            <li>Python, basic ML algorithms, and statistics</li>
-            <li>Exposure to libraries: <strong>NumPy, Pandas, Matplotlib, scikit-learn</strong></li>
-            <li>Understanding of supervised learning tasks (classification, regression)</li>
-            <li>Good at breaking down problems and working with structured data</li>
+            <li>Python, basic ML algorithms, and statistics.</li>
+            <li>Exposure to <strong>NumPy, Pandas, Matplotlib, scikit-learn</strong>.</li>
+            <li>Understanding of supervised learning (classification, regression).</li>
+            <li>Comfortable working with structured data and CSV datasets.</li>
           </ul>
         </div>
 
         <div class="role-card">
           <h3>Software Development Engineer Intern</h3>
-          <p style="font-size:0.87rem;">
+          <p>
             Comfortable with backend logic, data handling, and writing clean, modular code.
           </p>
           <ul>
-            <li>Programming in <strong>Java, C, C++, Python</strong></li>
-            <li>Basics of <strong>Node.js, MySQL, HTML, CSS</strong></li>
-            <li>Knowledge of <strong>OOP, DBMS, OS, DSA (arrays, linked lists, recursion, etc.)</strong></li>
-            <li>Version control exposure: <strong>Git &amp; GitHub</strong></li>
+            <li>Programming in <strong>Java, C, C++, Python</strong>.</li>
+            <li>Basics of <strong>Node.js, MySQL, HTML, CSS</strong>.</li>
+            <li>Knowledge of <strong>OOP, DBMS, OS, DSA (arrays, linked lists, recursion, etc.)</strong>.</li>
+            <li>Version control exposure: <strong>Git &amp; GitHub</strong>.</li>
           </ul>
         </div>
       </div>
     </section>
 
     <!-- Skills -->
-    <section id="skills">
-      <h2 class="section-title">Technical Skills</h2>
+    <section id="skills" class="reveal">
+      <h2 class="section-title">
+        Technical Skills
+        <span class="section-badge">Stack Overview</span>
+      </h2>
 
       <div class="skill-groups">
         <div>
@@ -563,44 +713,50 @@
     </section>
 
     <!-- Projects -->
-    <section id="projects">
-      <h2 class="section-title">Projects</h2>
+    <section id="projects" class="reveal">
+      <h2 class="section-title">
+        Projects
+        <span class="section-badge">To Be Updated</span>
+      </h2>
       <p class="project-tagline">
-        Below are placeholders – you can later update the titles, tech stack, and descriptions
-        with your actual academic or personal projects.
+        These are placeholders you can replace later with your academic or personal projects.
+        They still show recruiters what kind of problems you want to work on.
       </p>
 
       <div class="flex-grid">
         <div class="card">
-          <h3>Project 1 – <em>Update Title</em></h3>
+          <h3>Project 1 – <em>Update with ML Project</em></h3>
           <span>Tech stack: Python, scikit-learn, Pandas</span>
-          <p style="margin-top:0.4rem; font-size:0.85rem; color:#cbd5f5;">
+          <p style="margin-top:0.4rem; font-size:0.86rem; color:var(--text-soft);">
             Short description of your ML-related project. For example: built a basic classification
-            or regression model on a real-world dataset, including data preprocessing, model training,
-            and evaluation.
+            or regression model on a dataset, including data preprocessing, model training,
+            and evaluation using accuracy or error metrics.
           </p>
           <div class="project-links">
-            <a href="#" target="_blank">GitHub Repository (add link)</a>
+            <a href="#" target="_blank">GitHub Repository (add link when ready)</a>
           </div>
         </div>
 
         <div class="card">
-          <h3>Project 2 – <em>Update Title</em></h3>
+          <h3>Project 2 – <em>Update with Web / SDE Project</em></h3>
           <span>Tech stack: Node.js, MySQL, HTML, CSS</span>
-          <p style="margin-top:0.4rem; font-size:0.85rem; color:#cbd5f5;">
+          <p style="margin-top:0.4rem; font-size:0.86rem; color:var(--text-soft);">
             Short description of a web or backend project. For example: designed a simple CRUD
             application with user input forms, database integration, and basic validation.
           </p>
           <div class="project-links">
-            <a href="#" target="_blank">GitHub Repository (add link)</a>
+            <a href="#" target="_blank">GitHub Repository (add link when ready)</a>
           </div>
         </div>
       </div>
     </section>
 
     <!-- Education -->
-    <section id="education">
-      <h2 class="section-title">Education</h2>
+    <section id="education" class="reveal">
+      <h2 class="section-title">
+        Education
+        <span class="section-badge">Academic Path</span>
+      </h2>
 
       <div class="edu-item">
         <div class="edu-header">
@@ -634,38 +790,46 @@
     </section>
 
     <!-- Internship -->
-    <section id="internship">
-      <h2 class="section-title">Internship Experience</h2>
+    <section id="internship" class="reveal">
+      <h2 class="section-title">
+        Internship Experience
+        <span class="section-badge">Industrial Exposure</span>
+      </h2>
 
       <div class="card" style="margin-top:1rem;">
         <h3>Tamil Nadu Newsprint and Papers Limited (TNPL)</h3>
-        <span>IT Department · Pulp Mill · Paper Machine — (19 Nov 2025 to 03 Dec 2025)</span>
-        <p style="margin-top:0.4rem; font-size:0.88rem; color:#cbd5f5;">
-          Completed a multidisciplinary engineering internship at TNPL, gaining strong industrial
-          exposure across IT infrastructure, pulp mill processing, and paper machine operations.
-          Learned real-time workflow monitoring, automation systems, data handling, and problem-solving 
+        <p class="internship-meta">
+          IT Department · Pulp Mill · Paper Machine — 19 Nov 2025 to 03 Dec 2025
+        </p>
+        <p style="margin-top:0.45rem; font-size:0.88rem; color:var(--text-soft);">
+          Completed a multidisciplinary internship at TNPL, gaining industrial exposure across
+          IT infrastructure, pulp mill processing, and paper machine operations. Learned real-time
+          workflow monitoring, automation concepts, data handling, and practical problem-solving
           in a production environment.
         </p>
 
-        <ul style="margin-top:0.5rem; margin-left:1rem; color:#cbd5f5; font-size:0.85rem;">
-          <li>Worked with the <strong>Information Technology</strong> team to understand server management,
-              networking flow, ERP access control, and troubleshooting.</li>
-          <li>Observed <strong>Pulp Mill operations</strong> including chip processing, chemical usage,
-              digester functioning, and recovery processes.</li>
-          <li>Gained insights into <strong>Paper Machine</strong> drying stages, quality control,
-              automation panels, and production monitoring.</li>
-          <li>Learned technical documentation, OS-level controls, and industrial safety protocols.</li>
+        <ul style="margin-top:0.55rem; margin-left:1rem; color:var(--text-soft); font-size:0.86rem;">
+          <li>Worked with the <strong>Information Technology</strong> team on server overview,
+              networking flow, ERP access control, and troubleshooting basics.</li>
+          <li>Observed <strong>Pulp Mill operations</strong> including chip processing,
+              chemical usage, digester functioning, and recovery processes.</li>
+          <li>Understood <strong>Paper Machine</strong> stages such as pressing, drying,
+              quality checks, and production monitoring dashboards.</li>
+          <li>Strengthened documentation habits, OS-level awareness, and industrial safety practices.</li>
         </ul>
 
-        <p style="margin-top:0.4rem; font-size:0.85rem; color:#38bdf8;">
-          Certificate: Internship completed from 19-11-2025 to 03-12-2025 at TNPL, Karur District.
+        <p style="margin-top:0.45rem; font-size:0.84rem; color:var(--accent);">
+          Internship certified by TNPL, Karur District (Government of Tamil Nadu Enterprise).
         </p>
       </div>
     </section>
 
     <!-- Certifications & Volunteering -->
-    <section id="certifications">
-      <h2 class="section-title">Certifications &amp; Volunteering</h2>
+    <section id="certifications" class="reveal">
+      <h2 class="section-title">
+        Certifications &amp; Volunteering
+        <span class="section-badge">Additional Profile</span>
+      </h2>
 
       <div class="flex-grid">
         <div class="card">
@@ -681,7 +845,7 @@
         <div class="card">
           <h3>CPR Training Program Volunteer</h3>
           <span>Police Commissionerate, Tambaram · Jan 2024</span>
-          <p style="margin-top:0.4rem; font-size:0.85rem; color:#cbd5f5;">
+          <p style="margin-top:0.4rem; font-size:0.85rem; color:var(--text-soft);">
             Supported awareness sessions and hands-on CPR training activities.
           </p>
         </div>
@@ -689,7 +853,7 @@
         <div class="card">
           <h3>First Aid Training</h3>
           <span>ALERT Club · Nov 2023</span>
-          <p style="margin-top:0.4rem; font-size:0.85rem; color:#cbd5f5;">
+          <p style="margin-top:0.4rem; font-size:0.85rem; color:var(--text-soft);">
             Learned to respond effectively to emergency situations with basic first aid.
           </p>
         </div>
@@ -697,13 +861,16 @@
     </section>
 
     <!-- Contact -->
-    <section id="contact">
-      <h2 class="section-title">Contact</h2>
+    <section id="contact" class="reveal">
+      <h2 class="section-title">
+        Contact
+        <span class="section-badge">Let’s Connect</span>
+      </h2>
 
-      <p style="font-size:0.95rem; margin-top:0.5rem; color:#cbd5f5;">
-        I am currently looking for internship opportunities where I can apply my skills in
+      <p style="font-size:0.95rem; margin-top:0.5rem; color:var(--text-soft); max-width:32rem;">
+        I’m currently looking for internship opportunities where I can apply my skills in
         software development and machine learning, work with experienced mentors, and
-        grow into a strong ML Developer / SDE.
+        grow into a strong ML Developer / SDE. Feel free to reach out.
       </p>
 
       <div class="contact-grid">
@@ -754,7 +921,24 @@
   </footer>
 
   <script>
+    // Year
     document.getElementById("year").textContent = new Date().getFullYear();
+
+    // Reveal on scroll
+    const reveals = document.querySelectorAll(".reveal");
+    const observer = new IntersectionObserver(
+      entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.15 }
+    );
+
+    reveals.forEach(el => observer.observe(el));
   </script>
 </body>
 </html>
