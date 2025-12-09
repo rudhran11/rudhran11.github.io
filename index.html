@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Rudhran B | Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: "Poppins", sans-serif;
+      background: #0f172a;
+      color: #e5e7eb;
+      line-height: 1.6;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    /* Navbar */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: rgba(15, 23, 42, 0.95);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid rgba(148, 163, 184, 0.2);
+    }
+
+    .nav-container {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 0.75rem 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-weight: 700;
+      font-size: 1.1rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #38bdf8;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 1.5rem;
+      font-size: 0.95rem;
+    }
+
+    nav a {
+      color: #e5e7eb;
+      opacity: 0.8;
+      transition: opacity 0.2s, color 0.2s;
+    }
+
+    nav a:hover {
+      opacity: 1;
+      color: #38bdf8;
+    }
+
+    /* Layout helpers */
+    .container {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 2.5rem 1.5rem;
+    }
+
+    section {
+      padding: 2rem 0;
+      border-bottom: 1px solid rgba(148, 163, 184, 0.2);
+    }
+
+    .section-title {
+      font-size: 1.4rem;
+      margin-bottom: 1rem;
+      color: #e5e7eb;
+      display: inline-block;
+      position: relative;
+    }
+
+    .section-title::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -0.35rem;
+      width: 40%;
+      height: 2px;
+      background: linear-gradient(90deg, #38bdf8, transparent);
+    }
+
+    /* Hero */
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
+      gap: 2rem;
+      align-items: center;
+    }
+
+    .hero-left h1 {
+      font-size: 2.3rem;
+      margin-bottom: 0.5rem;
+      font-weight: 700;
+    }
+
+    .hero-left h2 {
+      font-size: 1.1rem;
+      font-weight: 500;
+      color: #38bdf8;
+      margin-bottom: 1rem;
+    }
+
+    .hero-left p {
+      font-size: 0.95rem;
+      color: #cbd5f5;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .tag {
+      font-size: 0.75rem;
+      padding: 0.3rem 0.7rem;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.5);
+      color: #cbd5f5;
+    }
+
+    .hero-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+    }
+
+    .btn {
+      padding: 0.55rem 1.2rem;
+      border-radius: 999px;
+      font-size: 0.9rem;
+      border: 1px solid #38bdf8;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.35rem;
+      cursor: pointer;
+      transition: background 0.2s, color 0.2s, transform 0.1s;
+    }
+
+    .btn-primary {
+      background: #38bdf8;
+      color: #0f172a;
+      font-weight: 500;
+    }
+
+    .btn-primary:hover {
+      background: #0ea5e9;
+      transform: translateY(-1px);
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: #e5e7eb;
+    }
+
+    .btn-outline:hover {
+      background: rgba(148, 163, 184, 0.15);
+      transform: translateY(-1px);
+    }
+
+    .hero-right {
+      border-radius: 1.25rem;
+      border: 1px solid rgba(148, 163, 184, 0.4);
+      padding: 1.5rem;
+      background: radial-gradient(circle at top, rgba(56, 189, 248, 0.15), transparent 55%),
+                  rgba(15, 23, 42, 0.9);
+    }
+
+    .info-row {
+      margin-bottom: 0.75rem;
+      font-size: 0.9rem;
+    }
+
+    .info-label {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: #9ca3af;
+    }
+
+    .info-value {
+      font-weight: 500;
+    }
+
+    /* Education */
+    .edu-item {
+      margin-bottom: 1rem;
+    }
+
+    .edu-header {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 0.25rem;
+      font-size: 0.95rem;
+      font-weight: 500;
+      color: #e5e7eb;
+    }
+
+    .edu-sub {
+      font-size: 0.85rem;
+      color: #9ca3af;
+    }
+
+    /* Grid lists */
+    .flex-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 1rem;
+      margin-top: 0.5rem;
+    }
+
+    .card {
+      border-radius: 0.9rem;
+      border: 1px solid rgba(148, 163, 184, 0.35);
+      padding: 1rem;
+      font-size: 0.9rem;
+      background: rgba(15, 23, 42, 0.8);
+    }
+
+    .card h3 {
+      font-size: 0.95rem;
+      margin-bottom: 0.35rem;
+      color: #e5e7eb;
+    }
+
+    .card span {
+      font-size: 0.8rem;
+      color: #9ca3af;
+    }
+
+    /* Skills */
+    .skill-groups {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1rem;
+      margin-top: 0.75rem;
+    }
+
+    .skill-title {
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.11em;
+      color: #9ca3af;
+      margin-bottom: 0.3rem;
+    }
+
+    .chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+    }
+
+    .chip {
+      padding: 0.25rem 0.6rem;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.4);
+      font-size: 0.78rem;
+      color: #d1d5db;
+    }
+
+    /* Contact */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 1rem;
+      margin-top: 0.75rem;
+    }
+
+    .contact-item {
+      font-size: 0.9rem;
+    }
+
+    .contact-label {
+      font-size: 0.8rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: #9ca3af;
+      margin-bottom: 0.25rem;
+    }
+
+    .contact-value a {
+      color: #38bdf8;
+      word-break: break-word;
+    }
+
+    footer {
+      text-align: center;
+      padding: 1.5rem;
+      font-size: 0.8rem;
+      color: #9ca3af;
+    }
+
+    @media (max-width: 768px) {
+      .hero {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-right {
+        order: -1;
+      }
+
+      nav ul {
+        gap: 1rem;
+        font-size: 0.85rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <header>
+    <div class="nav-container">
+      <div class="logo">RUDHRAN B</div>
+      <nav>
+        <ul>
+          <li><a href="#about">About</a></li>
+          <li><a href="#education">Education</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#certifications">Certifications</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <main class="container">
+    <section class="hero" id="about">
+      <div class="hero-left">
+        <h1>Hi, I'm <span style="color:#38bdf8;">Rudhran</span> 👋</h1>
+        <h2>B.Tech CSE (AI &amp; ML) Student • Aspiring Software Engineer</h2>
+        <p>
+          Motivated engineering student with a strong foundation in programming and problem-solving.
+          Passionate about leveraging technology to build efficient, real-world solutions and eager to
+          contribute to innovative teams through internships and projects.
+        </p>
+
+        <div class="hero-tags">
+          <span class="tag">C / C++ / Java / Python</span>
+          <span class="tag">AI &amp; Machine Learning</span>
+          <span class="tag">Web Technologies</span>
+          <span class="tag">Problem Solving</span>
+        </div>
+
+        <div class="hero-buttons">
+          <a href="#contact" class="btn btn-primary">Contact Me</a>
+          <a href="https://github.com/rudhran11" target="_blank" class="btn btn-outline">View GitHub</a>
+        </div>
+      </div>
+
+      <div class="hero-right">
+        <div class="info-row">
+          <div class="info-label">Name</div>
+          <div class="info-value">Rudhran B</div>
+        </div>
+        <div class="info-row">
+          <div class="info-label">Degree</div>
+          <div class="info-value">B.Tech Computer Science &amp; Engineering (AI &amp; ML)</div>
+        </div>
+        <div class="info-row">
+          <div class="info-label">College</div>
+          <div class="info-value">Hindustan Institute of Technology and Science, Chennai</div>
+        </div>
+        <div class="info-row">
+          <div class="info-label">Year</div>
+          <div class="info-value">2nd Year (2023 – 2027)</div>
+        </div>
+        <div class="info-row">
+          <div class="info-label">Location</div>
+          <div class="info-value">Chennai, Tamil Nadu, India</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Education -->
+    <section id="education">
+      <h2 class="section-title">Education</h2>
+
+      <div class="edu-item">
+        <div class="edu-header">
+          <span>B.Tech, Computer Science &amp; Engineering (AI &amp; ML)</span>
+          <span>2023 – 2027</span>
+        </div>
+        <div class="edu-sub">
+          Hindustan Institute of Technology and Science, Chennai
+        </div>
+      </div>
+
+      <div class="edu-item">
+        <div class="edu-header">
+          <span>HSC</span>
+          <span>2023</span>
+        </div>
+        <div class="edu-sub">
+          Velankanni Matriculation Higher Secondary School, Chennai – 85%
+        </div>
+      </div>
+
+      <div class="edu-item">
+        <div class="edu-header">
+          <span>SSLC</span>
+          <span>2021</span>
+        </div>
+        <div class="edu-sub">
+          Sri Ayyan Vidhyashram Higher Secondary School, Thiruvallur
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills -->
+    <section id="skills">
+      <h2 class="section-title">Skills</h2>
+
+      <div class="skill-groups">
+        <div>
+          <div class="skill-title">Programming &amp; Technologies</div>
+          <div class="chips">
+            <span class="chip">C</span>
+            <span class="chip">C++</span>
+            <span class="chip">Java</span>
+            <span class="chip">Python</span>
+            <span class="chip">Node.js</span>
+            <span class="chip">MySQL</span>
+            <span class="chip">HTML</span>
+            <span class="chip">CSS</span>
+          </div>
+        </div>
+
+        <div>
+          <div class="skill-title">Soft Skills</div>
+          <div class="chips">
+            <span class="chip">Good Communication</span>
+            <span class="chip">Problem Solving</span>
+            <span class="chip">Decision Making</span>
+            <span class="chip">Team Building</span>
+          </div>
+        </div>
+
+        <div>
+          <div class="skill-title">Additional</div>
+          <div class="chips">
+            <span class="chip">Computer Hardware Assembly</span>
+            <span class="chip">Windows OS</span>
+            <span class="chip">MS Office</span>
+          </div>
+        </div>
+
+        <div>
+          <div class="skill-title">Languages</div>
+          <div class="chips">
+            <span class="chip">English</span>
+            <span class="chip">Tamil</span>
+            <span class="chip">Hindi</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Certifications & Trainings -->
+    <section id="certifications">
+      <h2 class="section-title">Certifications &amp; Trainings</h2>
+
+      <div class="flex-grid">
+        <div class="card">
+          <h3>21-Days Nxtcode Challenge</h3>
+          <span>CCBP 4.0 Academy · April 2024</span>
+        </div>
+
+        <div class="card">
+          <h3>MS Office</h3>
+          <span>Apollo Computer Education, Vadapalani · May–Aug 2023</span>
+        </div>
+
+        <div class="card">
+          <h3>C &amp; C++ Programming</h3>
+          <span>Apollo Computer Education, Vadapalani · May–Aug 2023</span>
+        </div>
+
+        <div class="card">
+          <h3>Python Programming</h3>
+          <span>Apollo Computer Education, Vadapalani · May–Aug 2023</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Volunteering -->
+    <section id="volunteering">
+      <h2 class="section-title">Volunteering</h2>
+
+      <div class="flex-grid">
+        <div class="card">
+          <h3>CPR Training Program Volunteer</h3>
+          <span>Police Commissionerate, Tambaram · Jan 2024</span>
+          <p style="margin-top:0.4rem; font-size:0.85rem; color:#cbd5f5;">
+            Assisted in organizing and supporting CPR awareness and training activities.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>First Aid Training Program</h3>
+          <span>ALERT Club · Nov 2023</span>
+          <p style="margin-top:0.4rem; font-size:0.85rem; color:#cbd5f5;">
+            Participated in first aid sessions, learning to respond effectively to emergency situations.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact">
+      <h2 class="section-title">Contact</h2>
+
+      <p style="font-size:0.95rem; margin-top:0.5rem; color:#cbd5f5;">
+        I am actively looking for internship and project opportunities where I can apply my skills,
+        learn from experienced professionals, and contribute to impactful work.
+      </p>
+
+      <div class="contact-grid">
+        <div class="contact-item">
+          <div class="contact-label">Email</div>
+          <div class="contact-value">
+            <a href="mailto:rudhran1108@gmail.com">rudhran1108@gmail.com</a>
+          </div>
+        </div>
+
+        <div class="contact-item">
+          <div class="contact-label">Phone</div>
+          <div class="contact-value">
+            <a href="tel:+917305514664">+91 73055 14664</a>
+          </div>
+        </div>
+
+        <div class="contact-item">
+          <div class="contact-label">GitHub</div>
+          <div class="contact-value">
+            <a href="https://github.com/rudhran11" target="_blank">
+              github.com/rudhran11
+            </a>
+          </div>
+        </div>
+
+        <div class="contact-item">
+          <div class="contact-label">Address</div>
+          <div class="contact-value">
+            18/4, Bharathiyar Street, MGR Nagar,<br>Chennai – 600078
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    © <span id="year"></span> Rudhran B · Built with HTML &amp; CSS
+  </footer>
+
+  <script>
+    // Set current year in footer
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
