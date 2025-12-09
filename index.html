@@ -2,8 +2,12 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Rudhran B | Portfolio</title>
+  <title>Rudhran B | ML & SDE Portfolio</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Keywords for AI/ATS style filters -->
+  <meta name="description" content="Rudhran B - 3rd year B.Tech CSE (AI & ML) student seeking ML Developer / SDE internship. Skills in Python, Java, C++, Machine Learning, Data Structures and Algorithms, Node.js, MySQL, HTML, CSS.">
+  <meta name="keywords" content="Machine Learning, ML Developer, Software Development Engineer, SDE, Python, Java, C, C++, TensorFlow, PyTorch, scikit-learn, Pandas, NumPy, Node.js, MySQL, Git, GitHub, Data Structures and Algorithms, Internship">
 
   <!-- Google Font -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -18,7 +22,7 @@
 
     body {
       font-family: "Poppins", sans-serif;
-      background: #0f172a;
+      background: #020617; /* darker */
       color: #e5e7eb;
       line-height: 1.6;
     }
@@ -33,13 +37,13 @@
       position: sticky;
       top: 0;
       z-index: 10;
-      background: rgba(15, 23, 42, 0.95);
+      background: rgba(15, 23, 42, 0.98);
       backdrop-filter: blur(8px);
       border-bottom: 1px solid rgba(148, 163, 184, 0.2);
     }
 
     .nav-container {
-      max-width: 1000px;
+      max-width: 1100px;
       margin: 0 auto;
       padding: 0.75rem 1.5rem;
       display: flex;
@@ -49,7 +53,7 @@
 
     .logo {
       font-weight: 700;
-      font-size: 1.1rem;
+      font-size: 1.15rem;
       letter-spacing: 0.08em;
       text-transform: uppercase;
       color: #38bdf8;
@@ -59,7 +63,7 @@
       list-style: none;
       display: flex;
       gap: 1.5rem;
-      font-size: 0.95rem;
+      font-size: 0.9rem;
     }
 
     nav a {
@@ -75,14 +79,14 @@
 
     /* Layout helpers */
     .container {
-      max-width: 1000px;
+      max-width: 1100px;
       margin: 0 auto;
       padding: 2.5rem 1.5rem;
     }
 
     section {
       padding: 2rem 0;
-      border-bottom: 1px solid rgba(148, 163, 184, 0.2);
+      border-bottom: 1px solid rgba(148, 163, 184, 0.18);
     }
 
     .section-title {
@@ -112,13 +116,13 @@
     }
 
     .hero-left h1 {
-      font-size: 2.3rem;
+      font-size: 2.4rem;
       margin-bottom: 0.5rem;
       font-weight: 700;
     }
 
     .hero-left h2 {
-      font-size: 1.1rem;
+      font-size: 1.05rem;
       font-weight: 500;
       color: #38bdf8;
       margin-bottom: 1rem;
@@ -127,14 +131,14 @@
     .hero-left p {
       font-size: 0.95rem;
       color: #cbd5f5;
-      margin-bottom: 1.5rem;
+      margin-bottom: 1.2rem;
     }
 
     .hero-tags {
       display: flex;
       flex-wrap: wrap;
       gap: 0.5rem;
-      margin-bottom: 1.5rem;
+      margin-bottom: 1.3rem;
     }
 
     .tag {
@@ -189,8 +193,8 @@
       border-radius: 1.25rem;
       border: 1px solid rgba(148, 163, 184, 0.4);
       padding: 1.5rem;
-      background: radial-gradient(circle at top, rgba(56, 189, 248, 0.15), transparent 55%),
-                  rgba(15, 23, 42, 0.9);
+      background: radial-gradient(circle at top, rgba(56, 189, 248, 0.18), transparent 55%),
+                  rgba(15, 23, 42, 0.95);
     }
 
     .info-row {
@@ -207,6 +211,39 @@
 
     .info-value {
       font-weight: 500;
+    }
+
+    /* Role focus cards */
+    .role-focus-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1rem;
+      margin-top: 0.5rem;
+    }
+
+    .role-card {
+      border-radius: 0.9rem;
+      border: 1px solid rgba(148, 163, 184, 0.4);
+      padding: 1rem;
+      background: rgba(15, 23, 42, 0.9);
+      font-size: 0.9rem;
+    }
+
+    .role-card h3 {
+      font-size: 1rem;
+      margin-bottom: 0.35rem;
+      color: #e5e7eb;
+    }
+
+    .role-card ul {
+      padding-left: 1.1rem;
+      margin-top: 0.35rem;
+      color: #cbd5f5;
+      font-size: 0.86rem;
+    }
+
+    .role-card ul li {
+      margin-bottom: 0.2rem;
     }
 
     /* Education */
@@ -232,7 +269,7 @@
     /* Grid lists */
     .flex-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
       gap: 1rem;
       margin-top: 0.5rem;
     }
@@ -242,7 +279,7 @@
       border: 1px solid rgba(148, 163, 184, 0.35);
       padding: 1rem;
       font-size: 0.9rem;
-      background: rgba(15, 23, 42, 0.8);
+      background: rgba(15, 23, 42, 0.9);
     }
 
     .card h3 {
@@ -259,7 +296,7 @@
     /* Skills */
     .skill-groups {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
       gap: 1rem;
       margin-top: 0.75rem;
     }
@@ -284,6 +321,22 @@
       border: 1px solid rgba(148, 163, 184, 0.4);
       font-size: 0.78rem;
       color: #d1d5db;
+    }
+
+    /* Projects */
+    .project-tagline {
+      font-size: 0.9rem;
+      color: #cbd5f5;
+      margin-bottom: 0.6rem;
+    }
+
+    .project-links {
+      margin-top: 0.35rem;
+      font-size: 0.8rem;
+    }
+
+    .project-links a {
+      color: #38bdf8;
     }
 
     /* Contact */
@@ -329,7 +382,7 @@
 
       nav ul {
         gap: 1rem;
-        font-size: 0.85rem;
+        font-size: 0.8rem;
       }
     }
   </style>
@@ -343,9 +396,11 @@
       <nav>
         <ul>
           <li><a href="#about">About</a></li>
-          <li><a href="#education">Education</a></li>
+          <li><a href="#role-focus">ML &amp; SDE</a></li>
           <li><a href="#skills">Skills</a></li>
-          <li><a href="#certifications">Certifications</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#education">Education</a></li>
+          <li><a href="#internship">Internship</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
       </nav>
@@ -357,18 +412,20 @@
     <section class="hero" id="about">
       <div class="hero-left">
         <h1>Hi, I'm <span style="color:#38bdf8;">Rudhran</span> 👋</h1>
-        <h2>B.Tech CSE (AI &amp; ML) Student • Aspiring Software Engineer</h2>
+        <h2>3rd Year B.Tech CSE (AI &amp; ML) • ML Developer &amp; SDE Intern Aspirant</h2>
         <p>
-          Motivated engineering student with a strong foundation in programming and problem-solving.
-          Passionate about leveraging technology to build efficient, real-world solutions and eager to
-          contribute to innovative teams through internships and projects.
+          Motivated engineering student with a strong foundation in programming, algorithms,
+          and applied AI concepts. I am actively seeking opportunities as an
+          <strong>ML Developer Intern</strong> or <strong>Software Development Engineer Intern</strong> to
+          build production-ready solutions, learn from real-world systems, and contribute to impactful projects.
         </p>
 
         <div class="hero-tags">
-          <span class="tag">C / C++ / Java / Python</span>
-          <span class="tag">AI &amp; Machine Learning</span>
-          <span class="tag">Web Technologies</span>
-          <span class="tag">Problem Solving</span>
+          <span class="tag">Python · Java · C · C++</span>
+          <span class="tag">Machine Learning (AI &amp; ML)</span>
+          <span class="tag">Data Structures &amp; Algorithms</span>
+          <span class="tag">Node.js · MySQL</span>
+          <span class="tag">HTML · CSS</span>
         </div>
 
         <div class="hero-buttons">
@@ -383,16 +440,16 @@
           <div class="info-value">Rudhran B</div>
         </div>
         <div class="info-row">
-          <div class="info-label">Degree</div>
-          <div class="info-value">B.Tech Computer Science &amp; Engineering (AI &amp; ML)</div>
+          <div class="info-label">Current Year</div>
+          <div class="info-value">3rd Year · B.Tech CSE (AI &amp; ML)</div>
         </div>
         <div class="info-row">
           <div class="info-label">College</div>
           <div class="info-value">Hindustan Institute of Technology and Science, Chennai</div>
         </div>
         <div class="info-row">
-          <div class="info-label">Year</div>
-          <div class="info-value">2nd Year (2023 – 2027)</div>
+          <div class="info-label">Preferred Roles</div>
+          <div class="info-value">ML Developer Intern · SDE Intern</div>
         </div>
         <div class="info-row">
           <div class="info-label">Location</div>
@@ -401,54 +458,73 @@
       </div>
     </section>
 
-    <!-- Education -->
-    <section id="education">
-      <h2 class="section-title">Education</h2>
+    <!-- Role Focus -->
+    <section id="role-focus">
+      <h2 class="section-title">Role Focus: ML Developer &amp; SDE Intern</h2>
 
-      <div class="edu-item">
-        <div class="edu-header">
-          <span>B.Tech, Computer Science &amp; Engineering (AI &amp; ML)</span>
-          <span>2023 – 2027</span>
+      <div class="role-focus-grid">
+        <div class="role-card">
+          <h3>ML Developer Intern</h3>
+          <p style="font-size:0.87rem;">
+            Strong interest in building end-to-end ML solutions: from data preprocessing
+            to model training, evaluation, and deployment.
+          </p>
+          <ul>
+            <li>Python, basic ML algorithms, and statistics</li>
+            <li>Exposure to libraries: <strong>NumPy, Pandas, Matplotlib, scikit-learn</strong></li>
+            <li>Understanding of supervised learning tasks (classification, regression)</li>
+            <li>Good at breaking down problems and working with structured data</li>
+          </ul>
         </div>
-        <div class="edu-sub">
-          Hindustan Institute of Technology and Science, Chennai
-        </div>
-      </div>
 
-      <div class="edu-item">
-        <div class="edu-header">
-          <span>HSC</span>
-          <span>2023</span>
-        </div>
-        <div class="edu-sub">
-          Velankanni Matriculation Higher Secondary School, Chennai – 85%
-        </div>
-      </div>
-
-      <div class="edu-item">
-        <div class="edu-header">
-          <span>SSLC</span>
-          <span>2021</span>
-        </div>
-        <div class="edu-sub">
-          Sri Ayyan Vidhyashram Higher Secondary School, Thiruvallur
+        <div class="role-card">
+          <h3>Software Development Engineer Intern</h3>
+          <p style="font-size:0.87rem;">
+            Comfortable with backend logic, data handling, and writing clean, modular code.
+          </p>
+          <ul>
+            <li>Programming in <strong>Java, C, C++, Python</strong></li>
+            <li>Basics of <strong>Node.js, MySQL, HTML, CSS</strong></li>
+            <li>Knowledge of <strong>OOP, DBMS, OS, DSA (arrays, linked lists, recursion, etc.)</strong></li>
+            <li>Version control exposure: <strong>Git &amp; GitHub</strong></li>
+          </ul>
         </div>
       </div>
     </section>
 
     <!-- Skills -->
     <section id="skills">
-      <h2 class="section-title">Skills</h2>
+      <h2 class="section-title">Technical Skills</h2>
 
       <div class="skill-groups">
         <div>
-          <div class="skill-title">Programming &amp; Technologies</div>
+          <div class="skill-title">Programming &amp; Core CS</div>
           <div class="chips">
             <span class="chip">C</span>
             <span class="chip">C++</span>
             <span class="chip">Java</span>
             <span class="chip">Python</span>
-            <span class="chip">Node.js</span>
+            <span class="chip">Data Structures &amp; Algorithms (in progress)</span>
+            <span class="chip">Object-Oriented Programming</span>
+          </div>
+        </div>
+
+        <div>
+          <div class="skill-title">Machine Learning &amp; Data</div>
+          <div class="chips">
+            <span class="chip">Machine Learning Fundamentals</span>
+            <span class="chip">Python for Data Analysis</span>
+            <span class="chip">NumPy</span>
+            <span class="chip">Pandas</span>
+            <span class="chip">Matplotlib (Basics)</span>
+            <span class="chip">scikit-learn (Basics)</span>
+          </div>
+        </div>
+
+        <div>
+          <div class="skill-title">Web &amp; Backend</div>
+          <div class="chips">
+            <span class="chip">Node.js (Basics)</span>
             <span class="chip">MySQL</span>
             <span class="chip">HTML</span>
             <span class="chip">CSS</span>
@@ -456,21 +532,22 @@
         </div>
 
         <div>
-          <div class="skill-title">Soft Skills</div>
+          <div class="skill-title">Tools &amp; Other</div>
           <div class="chips">
-            <span class="chip">Good Communication</span>
-            <span class="chip">Problem Solving</span>
-            <span class="chip">Decision Making</span>
-            <span class="chip">Team Building</span>
+            <span class="chip">Git &amp; GitHub</span>
+            <span class="chip">MS Office</span>
+            <span class="chip">Windows OS</span>
+            <span class="chip">Computer Hardware Assembly</span>
           </div>
         </div>
 
         <div>
-          <div class="skill-title">Additional</div>
+          <div class="skill-title">Soft Skills</div>
           <div class="chips">
-            <span class="chip">Computer Hardware Assembly</span>
-            <span class="chip">Windows OS</span>
-            <span class="chip">MS Office</span>
+            <span class="chip">Communication</span>
+            <span class="chip">Problem Solving</span>
+            <span class="chip">Decision Making</span>
+            <span class="chip">Team Collaboration</span>
           </div>
         </div>
 
@@ -485,9 +562,110 @@
       </div>
     </section>
 
-    <!-- Certifications & Trainings -->
+    <!-- Projects -->
+    <section id="projects">
+      <h2 class="section-title">Projects</h2>
+      <p class="project-tagline">
+        Below are placeholders – you can later update the titles, tech stack, and descriptions
+        with your actual academic or personal projects.
+      </p>
+
+      <div class="flex-grid">
+        <div class="card">
+          <h3>Project 1 – <em>Update Title</em></h3>
+          <span>Tech stack: Python, scikit-learn, Pandas</span>
+          <p style="margin-top:0.4rem; font-size:0.85rem; color:#cbd5f5;">
+            Short description of your ML-related project. For example: built a basic classification
+            or regression model on a real-world dataset, including data preprocessing, model training,
+            and evaluation.
+          </p>
+          <div class="project-links">
+            <a href="#" target="_blank">GitHub Repository (add link)</a>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3>Project 2 – <em>Update Title</em></h3>
+          <span>Tech stack: Node.js, MySQL, HTML, CSS</span>
+          <p style="margin-top:0.4rem; font-size:0.85rem; color:#cbd5f5;">
+            Short description of a web or backend project. For example: designed a simple CRUD
+            application with user input forms, database integration, and basic validation.
+          </p>
+          <div class="project-links">
+            <a href="#" target="_blank">GitHub Repository (add link)</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Education -->
+    <section id="education">
+      <h2 class="section-title">Education</h2>
+
+      <div class="edu-item">
+        <div class="edu-header">
+          <span>B.Tech, Computer Science &amp; Engineering (AI &amp; ML)</span>
+          <span>2023 – 2027</span>
+        </div>
+        <div class="edu-sub">
+          Hindustan Institute of Technology and Science, Chennai · Currently 3rd Year
+        </div>
+      </div>
+
+      <div class="edu-item">
+        <div class="edu-header">
+          <span>HSC</span>
+          <span>2023</span>
+        </div>
+        <div class="edu-sub">
+          Velankanni Matriculation Higher Secondary School, Chennai · 85%
+        </div>
+      </div>
+
+      <div class="edu-item">
+        <div class="edu-header">
+          <span>SSLC</span>
+          <span>2021</span>
+        </div>
+        <div class="edu-sub">
+          Sri Ayyan Vidhyashram Higher Secondary School, Thiruvallur
+        </div>
+      </div>
+    </section>
+
+    <!-- Internship -->
+    <section id="internship">
+      <h2 class="section-title">Internship Experience</h2>
+
+      <div class="card" style="margin-top:1rem;">
+        <h3>Tamil Nadu Newsprint and Papers Limited (TNPL)</h3>
+        <span>IT Department · Pulp Mill · Paper Machine — (19 Nov 2025 to 03 Dec 2025)</span>
+        <p style="margin-top:0.4rem; font-size:0.88rem; color:#cbd5f5;">
+          Completed a multidisciplinary engineering internship at TNPL, gaining strong industrial
+          exposure across IT infrastructure, pulp mill processing, and paper machine operations.
+          Learned real-time workflow monitoring, automation systems, data handling, and problem-solving 
+          in a production environment.
+        </p>
+
+        <ul style="margin-top:0.5rem; margin-left:1rem; color:#cbd5f5; font-size:0.85rem;">
+          <li>Worked with the <strong>Information Technology</strong> team to understand server management,
+              networking flow, ERP access control, and troubleshooting.</li>
+          <li>Observed <strong>Pulp Mill operations</strong> including chip processing, chemical usage,
+              digester functioning, and recovery processes.</li>
+          <li>Gained insights into <strong>Paper Machine</strong> drying stages, quality control,
+              automation panels, and production monitoring.</li>
+          <li>Learned technical documentation, OS-level controls, and industrial safety protocols.</li>
+        </ul>
+
+        <p style="margin-top:0.4rem; font-size:0.85rem; color:#38bdf8;">
+          Certificate: Internship completed from 19-11-2025 to 03-12-2025 at TNPL, Karur District.
+        </p>
+      </div>
+    </section>
+
+    <!-- Certifications & Volunteering -->
     <section id="certifications">
-      <h2 class="section-title">Certifications &amp; Trainings</h2>
+      <h2 class="section-title">Certifications &amp; Volunteering</h2>
 
       <div class="flex-grid">
         <div class="card">
@@ -496,40 +674,23 @@
         </div>
 
         <div class="card">
-          <h3>MS Office</h3>
+          <h3>MS Office · C &amp; C++ · Python</h3>
           <span>Apollo Computer Education, Vadapalani · May–Aug 2023</span>
         </div>
 
-        <div class="card">
-          <h3>C &amp; C++ Programming</h3>
-          <span>Apollo Computer Education, Vadapalani · May–Aug 2023</span>
-        </div>
-
-        <div class="card">
-          <h3>Python Programming</h3>
-          <span>Apollo Computer Education, Vadapalani · May–Aug 2023</span>
-        </div>
-      </div>
-    </section>
-
-    <!-- Volunteering -->
-    <section id="volunteering">
-      <h2 class="section-title">Volunteering</h2>
-
-      <div class="flex-grid">
         <div class="card">
           <h3>CPR Training Program Volunteer</h3>
           <span>Police Commissionerate, Tambaram · Jan 2024</span>
           <p style="margin-top:0.4rem; font-size:0.85rem; color:#cbd5f5;">
-            Assisted in organizing and supporting CPR awareness and training activities.
+            Supported awareness sessions and hands-on CPR training activities.
           </p>
         </div>
 
         <div class="card">
-          <h3>First Aid Training Program</h3>
+          <h3>First Aid Training</h3>
           <span>ALERT Club · Nov 2023</span>
           <p style="margin-top:0.4rem; font-size:0.85rem; color:#cbd5f5;">
-            Participated in first aid sessions, learning to respond effectively to emergency situations.
+            Learned to respond effectively to emergency situations with basic first aid.
           </p>
         </div>
       </div>
@@ -540,8 +701,9 @@
       <h2 class="section-title">Contact</h2>
 
       <p style="font-size:0.95rem; margin-top:0.5rem; color:#cbd5f5;">
-        I am actively looking for internship and project opportunities where I can apply my skills,
-        learn from experienced professionals, and contribute to impactful work.
+        I am currently looking for internship opportunities where I can apply my skills in
+        software development and machine learning, work with experienced mentors, and
+        grow into a strong ML Developer / SDE.
       </p>
 
       <div class="contact-grid">
@@ -569,6 +731,15 @@
         </div>
 
         <div class="contact-item">
+          <div class="contact-label">Portfolio</div>
+          <div class="contact-value">
+            <a href="https://rudhran11.github.io" target="_blank">
+              rudhran11.github.io
+            </a>
+          </div>
+        </div>
+
+        <div class="contact-item">
           <div class="contact-label">Address</div>
           <div class="contact-value">
             18/4, Bharathiyar Street, MGR Nagar,<br>Chennai – 600078
@@ -579,11 +750,10 @@
   </main>
 
   <footer>
-    © <span id="year"></span> Rudhran B · Built with HTML &amp; CSS
+    © <span id="year"></span> Rudhran B · ML &amp; SDE Internship Portfolio
   </footer>
 
   <script>
-    // Set current year in footer
     document.getElementById("year").textContent = new Date().getFullYear();
   </script>
 </body>
